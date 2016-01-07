@@ -1,0 +1,48 @@
+/* 
+ * Author: Chris Rountree
+ * Created on January 7, 2016, 10:45 AM
+ * Purpose:  How far does it drop?
+ */
+
+//System Libraries
+#include <iostream>     //IO Library
+#include <cstdlib>      //Random function location
+#include <cmath>        //Math functions
+#include <ctime>        //Time to set the random seed
+#include <iomanip>      //Format library
+using namespace std;
+
+//User Libraries
+
+//Global Constant
+const float GRAVITY=32.174f;     //Sea level earth acceleration constant ft/s^2
+
+//Function Prototypes
+
+//Execution Begins Here
+int main(int argc, char** argv) {
+    //Declare variables
+    unsigned int amtStl;            //Amount to steal
+    unsigned short denom;           //Bill denomination
+    unsigned char wtPers=80;        //Weight person can carry in lbs
+    unsigned char nPerps;           //Number of perpetrators
+    
+    //Input the number of coins
+    cout<<"How much money would you like to acquire?"<<endl;
+    cin>>amtStl;
+    cout<<"What is the bill denomination desired?"<<endl;
+    cin>>denom;
+    
+    //Calculate the number of fellow perpetrators 
+    nPerps=CNVLBS*amtStl*WTBILL/denom/wtPers;       //Truncated Equation
+    nPerps=nPerps+1;                                //Untruncated Equation
+    
+    //Output the results
+    cout<<"Amount desired = $"<<amtStl<<endl;
+    cout<<"Denomination desired = $"<<denom<<endl;
+    cout<<"Number of perpetrators required = "
+            <<static_cast<int>(nPerps)<<endl;
+    
+    //Exit stage right
+    return 0;
+}
