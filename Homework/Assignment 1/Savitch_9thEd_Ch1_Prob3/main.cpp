@@ -1,7 +1,7 @@
 /* 
  * Author: Chris Rountree
  * Created on January 6, 2016, 9:38 AM
- * Purpose:  Calculate customers who purchase energy and citrus drinks
+ * Purpose:  Quarters, Nickels, and Dimes
  */
 
 //System Libraries
