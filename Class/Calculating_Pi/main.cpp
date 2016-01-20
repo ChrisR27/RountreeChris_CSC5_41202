@@ -22,7 +22,9 @@ using namespace std;
 
 int main(int argc, char** argv) {
     //Declare and initialize variables for pi
-    float pid4,answer;
+    float piApprx=1;
+    unsigned int nTerms;
+    char sign=-1;
     
     //Calculate pi
     for(int x=1;x<=100;pid4=1/(x+2));
