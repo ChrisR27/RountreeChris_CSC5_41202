@@ -2,7 +2,7 @@
  * File:   main.cpp
  * Author: Chris Rountree
  * Purpose: Check out IDE
- * Created on January 4, 2016, 10:28 AM
+ * Created on January 19, 2016, 8:30 AM
  */
 
 //System Libraries
@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
     
     //Input Data
     
-    //Calulate or map inputs to outputs
+    //Calculate or map inputs to outputs
     
     //Output the results
     cout<<"Hello World"<<endl;
