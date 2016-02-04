@@ -7,7 +7,6 @@
 
 //System Libraries
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 //User Libraries
@@ -15,22 +14,24 @@ using namespace std;
 //Global Constants
 
 //Functional Prototypes
-float getSale();
-void highest();
+int getSale(int);
+void highest(int, int, int, int);
 
 //Execution Begins Here
 
 
 int main(int argc, char** argv) {
     //Declare and initialize variables
-    int fahren;
+    int saleNE,saleSE,saleNW,saleSW;  //Sales for the 4 different divisions
     
-    //Input Data
-    cout<<"Enter a temperature in Fahrenheit to be converted to Celsius"<<endl;
-    cin>>fahren;
+    //Calling the function to input sales from each region
+    saleNE=getSale(1);
+    saleSE=getSale(2);
+    saleNW=getSale(3);
+    saleSW=getSale(4);
     
-    //Output the results
-    celsius(fahren);
+    //Output the the highest sales division
+    highest(saleNE, saleSE, saleNW, saleSW);
     
     //Exit stage right
     return 0;
@@ -39,19 +40,56 @@ int main(int argc, char** argv) {
 /******************************************************************************/
 /**********************Get sales for each division*****************************/
 /******************************************************************************/
-float getSale(){
-    cout<<fixed<<setprecision(2)<<showpoint;
+int getSale(int division){
     //Declare variables
+    int tmpSale;        //The input for each division
     
-    
-    //Converted from Celsius to Fahrenheit
-    cels=(5.0f/9)*(fahren-32);
-    
-    //Output the table
-    cout<<endl<<"Fahrenheit Celsius"<<endl;
-    cout<<setw(6)<<fahren<<setw(12)<<cels<<endl;
-    for(int i=0,fahren=0;i<21;i++,fahren++){
-        cels=(5.0f/9)*(fahren-32);
-        cout<<setw(6)<<fahren<<setw(12)<<cels<<endl;
+    //Input for each division
+    switch(division){
+        //Northeast division
+        case 1:{
+            cout<<"Input the total sales from the Northeast division"<<endl;
+            break;
+        }//Southeast division
+        case 2:{
+            cout<<"Input the total sales from the Southeast division"<<endl;
+            break;
+        }//Northwest division
+        case 3:{
+            cout<<"Input the total sales from the Northwest division"<<endl;
+            break;
+        }//Southwest division
+        case 4:{
+            cout<<"Input the total sales from the Southwest division"<<endl;
+            break;
+        }
+    }
+    //Used to input values for each divisions sales
+    tmpSale=-1;
+    while(tmpSale<0){
+        cin>>tmpSale;
+    }return tmpSale;
+}
+
+/******************************************************************************/
+/****************Finding the division with the highest sales*******************/
+/******************************************************************************/
+void highest(int saleNE, int saleSE, int saleNW, int saleSW){
+    //Finding out if Northeast has the highest
+    if(saleNE>saleSE && saleNE>saleNW && saleNE>saleSW){
+        cout<<"The Northeast division has the highest amount of sales with $"
+                <<saleNE<<endl;
+    }//Finding out if Southeast has the highest
+    if(saleSE>saleNE && saleSE>saleNW && saleSE>saleSW){
+        cout<<"The Southeast division has the highest amount of sales with $"
+                <<saleSE<<endl;
+    }//Finding out if Northwest has the highest
+    if(saleNW>saleSE && saleNW>saleNE && saleNW>saleSW){
+        cout<<"The Northwest division has the highest amount of sales with $"
+                <<saleNW<<endl;
+    }//Finding out if Southwest has the highest
+    if(saleSW>saleSE && saleSW>saleNE && saleSW>saleNW){
+        cout<<"The Southwest division has the highest amount of sales with $"
+                <<saleSW<<endl;
     }
 }
