@@ -19,7 +19,7 @@ using namespace std;
 const char PERCENT=100;         //Conversion to percent
 
 //Functional Prototypes
-int card();
+char card();
 
 //Execution Begins Here
 int main(int argc, char** argv) {
@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
         //Declare and initialize variables for playing
         unsigned char totPlyr=card()+card();   //Starting hand for the player
         unsigned char totCpu=card();           //Starting hand for the computer
-        unsigned short decisn;                 //Players input to hit/stand
+        int decisn;                 //Players input to hit/stand
         bool reDsply=true;                     //Display for hit/stand prompt
         
         //Asking for a bet each time
@@ -150,7 +150,7 @@ int main(int argc, char** argv) {
 /******************************************************************************/
 /***********************************Card***************************************/
 /******************************************************************************/
-int card(){
+char card(){
     //Declare and initialize variables
     unsigned char card;     //Randomly generating a card to be drawn
     
@@ -160,4 +160,11 @@ int card(){
     //Making sure if it's a Jack, Queen, or King, it converts to a 10
     if(card==12||card==13||card==14){return card=10;}
     else return card;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+/******************************************************************************/
+void plyrCrd(){
+    
 }
